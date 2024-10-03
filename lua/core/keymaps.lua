@@ -2,10 +2,7 @@ local map = vim.keymap
 
 -- leader key
 vim.g.mapleader = " "
-
---general keymaps 
-map.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-map.set("n", "<Leader>s", ":write<CR>", { silent = true })
+vim.g.localmapleader = " "
 
 -- Move to first symbol on the line
 map.set("n", "H", "^")
@@ -16,12 +13,6 @@ map.set("n", "L", "$")
 -- Shift + q - Quit
 map.set("n", "Q", "<C-W>q")
 
--- Quick jumping between splits
-map.set("n", "<C-j>", "<C-w>j")
-map.set("n", "<C-k>", "<C-w>k")
-map.set("n", "<C-h>", "<C-w>h")
-map.set("n", "<C-l>", "<C-w>l")
-
 -- Indenting in visual mode (tab/shift+tab)
 map.set("v", "<Tab>", ">gv")
 map.set("v", "<S-Tab>", "<gv")
@@ -30,13 +21,6 @@ map.set("v", "<S-Tab>", "<gv")
 vim.cmd("vnoremap <silent> y y`]")
 vim.cmd("vnoremap <silent> p p`]")
 vim.cmd("nnoremap <silent> p p`]")
-
--- doing x will not copy in clip board
-map.set("n", "x", '"_x')
-
--- Increment/decrement
-map.set('n', '+', '<C-a>')
-map.set('n', '-', '<C-x>')
 
 -- Split window
 map.set('n', 'ss', ':split<Return>') -- below
@@ -47,3 +31,11 @@ map.set("i", "jk", "<ESC>")
 
 -- Select all
 map.set('n', '<C-a>', 'gg<S-v>G')
+
+--Buffer Nav
+map.set("n", "<tab>", ":bn<CR>", {silent = true, noremap = true})
+map.set("n", "<S-tab>", ":bp<CR>", {silent = true, noremap = true})
+map.set("n", "<leader>x", ":bd<CR>", {silent = true, noremap = true})
+
+map.set("n", "<leader>ft", vim.lsp.buf.format)
+map.set("n", "<leader>tr", ":ToggleTerm<CR>", {silent = true, noremap = true})

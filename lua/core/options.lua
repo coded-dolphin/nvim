@@ -1,3 +1,5 @@
+vim.cmd([[autocmd FileType * set formatoptions-=ro]])
+
 local set = vim.opt --ease of use
 
 -- Enable mouse
@@ -8,8 +10,8 @@ set.number = true
 set.relativenumber = true
 
 -- tabbing and indenting
-set.tabstop = 2
-set.shiftwidth = 2
+set.tabstop = 4
+set.shiftwidth = 4
 set.expandtab = true
 set.ai = true
 set.si = true
@@ -26,9 +28,6 @@ set.smartcase = true
 
 -- cursorline
 set.cursorline = true
-set.winblend = 0
-set.wildoptions = 'pum'
-set.pumblend = 5
 set.background = 'dark'
 
 -- appearance
@@ -53,9 +52,14 @@ set.swapfile = false
 
 set.wildmenu = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+set.hlsearch = false
+set.incsearch = true
 
 -- Save undo history
-vim.o.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+set.undofile = true
+set.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+set.cmdheight = 1
+set.laststatus = 0
+
+set.modifiable = true
