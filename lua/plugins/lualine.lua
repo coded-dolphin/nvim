@@ -6,9 +6,13 @@ return {
     require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'tokyonight',
-    component_separators = {left = ')', right = '('},
-    section_separators = { left = '', right = '' },
+    theme = 'ayu',
+    -- component_separators = {left = ')', right = '('},
+    -- section_separators = { left = '', right = '' },
+
+    component_separators = {left = ' ', right = ' '},
+    section_separators = { left = ' ', right = ' ' },
+
     disabled_filetypes = {'packer', 'NvimTree'},
     ignore_focus = {},
     always_divide_middle = true,

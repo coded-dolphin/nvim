@@ -38,4 +38,3 @@ map.set("n", "<S-tab>", ":bp<CR>", {silent = true, noremap = true})
 map.set("n", "<leader>x", ":bd<CR>", {silent = true, noremap = true})
 
 map.set("n", "<leader>ft", vim.lsp.buf.format)
-map.set("n", "<leader>tr", ":ToggleTerm<CR>", {silent = true, noremap = true})

@@ -1,4 +1,5 @@
 return {
+  {
 	"folke/tokyonight.nvim",
 	lazy = false,
 	priority = 1000,
@@ -16,6 +17,20 @@ return {
 				colors.error = "#ff0000"
 			end
 		})
-		vim.cmd [[colorscheme tokyonight]]
+		-- vim.cmd [[colorscheme tokyonight]]
 	end
+  },
+
+  {
+    "Shatur/neovim-ayu",
+
+    config = function ()
+      require("ayu").setup({
+            mirage = false,
+    terminal = true,
+    overrides = {},
+      })
+      		vim.cmd [[colorscheme ayu]]
+    end
+  }
 }

@@ -10,8 +10,8 @@ set.number = true
 set.relativenumber = true
 
 -- tabbing and indenting
-set.tabstop = 4
-set.shiftwidth = 4
+set.tabstop = 2
+set.shiftwidth = 2
 set.expandtab = true
 set.ai = true
 set.si = true

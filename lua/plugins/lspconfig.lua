@@ -15,6 +15,9 @@ return {
                 ensure_installed = {
                     "pyright",
                     "lua_ls",
+                    "html",
+                    "cssls",
+                    "clangd",
                 },
             })
         end,
@@ -39,6 +42,9 @@ return {
             })
 
             lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.clangd.setup({
                 capabilities = capabilities,
             })
         end,
