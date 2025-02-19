@@ -1,3 +1,2 @@
 require("core")
-require("my_colorscheme").apply {}
-
+require("my_colorscheme").apply()
