@@ -24,6 +24,7 @@ return {
 	-- Git branch with an icon
 	lualine_b = {
 	  { "branch", icon = "" },
+    { "diagnostics" },
 	},
 	-- File path + file icon
 	lualine_c = {
