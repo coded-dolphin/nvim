@@ -28,7 +28,7 @@ vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
 vim.keymap.set("v", "<leader>x", ":.lua<CR>")
 vim.keymap.set("n", "<leader>x", ":.lua<CR>")
-vim.keymap.set("n", "<leader>e", ":Explore<CR>")
+-- vim.keymap.set("n", "<leader>e", ":Explore<CR>")
 
 --Buffer Nav
 vim.keymap.set("n", "<tab>", ":bn<CR>", { silent = true, noremap = true })

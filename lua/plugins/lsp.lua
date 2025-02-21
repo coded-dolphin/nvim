@@ -26,6 +26,8 @@ return {
           "cssls",
           "clangd",
           "emmet_language_server",
+          "eslint",
+          "ts_ls",
         },
       })
     end,
@@ -46,12 +48,17 @@ return {
     },
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      require("lspconfig").lua_ls.setup { capabilites = capabilities }
-      require("lspconfig").html.setup { capabilites = capabilities }
-      require("lspconfig").cssls.setup { capabilites = capabilities }
-      require("lspconfig").pyright.setup { capabilites = capabilities }
-      require("lspconfig").clangd.setup { capabilites = capabilities }
-      require("lspconfig").emmet_language_server.setup { capabilites = capabilities }
+      require("lspconfig").lua_ls.setup { capabilities = capabilities }
+      require("lspconfig").html.setup { capabilities = capabilities }
+      require("lspconfig").cssls.setup { capabilities = capabilities }
+      require("lspconfig").pyright.setup { capabilities = capabilities }
+      require("lspconfig").clangd.setup { capabilities = capabilities }
+      require("lspconfig").emmet_language_server.setup {
+        capabilities = capabilities,
+        filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+      }
+      require("lspconfig").eslint.setup { capabilities = capabilities }
+      require("lspconfig").ts_ls.setup { capabilities = capabilities }
 
       -- format on save
       vim.api.nvim_create_autocmd('LspAttach', {
