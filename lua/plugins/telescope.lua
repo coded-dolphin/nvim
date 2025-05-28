@@ -1,31 +1,45 @@
-
 return
-{
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = {
+  {
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.8',
+      dependencies = {
         'nvim-tree/nvim-web-devicons',
         'nvim-lua/plenary.nvim',
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-    },
-    config = function()
-    require('telescope').setup {
-        extensions = {
+      },
+      config = function()
+        require('telescope').setup {
+          defaults = {
+            layout_config = {
+              prompt_position = "top",
+            },
+            sorting_strategy = "ascending", -- required to match prompt-on-top layout
+            -- optional: make preview window smaller, or disable if you prefer
+            layout_strategy = "horizontal",
+          },
+          extensions = {
             fzf = {}
+          }
         }
-    }
 
-    require('telescope').load_extension('fzf')
+        require('telescope').load_extension('fzf')
 
-        local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-        vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-        vim.keymap.set('n', '<leader>fc', function()
-            builtin.find_files {
-                cwd = vim.fn.stdpath("config")
+      end
+    },
+    {
+      'nvim-telescope/telescope-ui-select.nvim',
+      config = function()
+        -- This is your opts table
+        require("telescope").setup {
+          extensions = {
+            ["ui-select"] = {
+              require("telescope.themes").get_dropdown {
+              }
             }
-        end)
-    end
-}
+          }
+        }
+        require("telescope").load_extension("ui-select")
+      end
+    },
+  }
